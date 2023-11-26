@@ -1,0 +1,56 @@
+{
+    "Entities": [
+        {
+            "components": [
+                {
+                    "ComponentType": "Name",
+                    "Name": "my created entity"
+                },
+                {
+                    "ComponentType": "Position",
+                    "X": 2.0,
+                    "Y": 4.0
+                }
+            ]
+        },
+        {
+            "components": [
+                {
+                    "ComponentType": "Name",
+                    "Name": "my created entity"
+                },
+                {
+                    "ComponentType": "Position",
+                    "X": 2.0,
+                    "Y": 4.0
+                }
+            ]
+        },
+        {
+            "components": [
+                {
+                    "ComponentType": "Name",
+                    "Name": "my created entity"
+                },
+                {
+                    "ComponentType": "Position",
+                    "X": 2.0,
+                    "Y": 4.0
+                }
+            ]
+        },
+        {
+            "components": [
+                {
+                    "ComponentType": "Name",
+                    "Name": "my created entity"
+                },
+                {
+                    "ComponentType": "Position",
+                    "X": 2.0,
+                    "Y": 4.0
+                }
+            ]
+        }
+    ]
+}
