@@ -6,20 +6,22 @@
 
 namespace Engine {
 
-	class Component {
+	class Entity;
+	
+
+	class Component {	
+
 	public:
-		Component( std::string _ComponentType) :  ComponentType(_ComponentType) {};
+		Component( std::string _ComponentType) :  ComponentType(_ComponentType) { std::cout << "created component" << std::endl; };
+		virtual ~Component() { std::cout << "destoryed component" << std::endl; };
 
 		std::string ComponentType{ };
 
-		virtual nlohmann::json ToJsonC() {
-			return nlohmann::json{
-				{"ComponentType",ComponentType}
-			};
-		};
-
+		virtual void CreateAndAddComponent(Entity& Target, nlohmann::json& CompJson) = 0;
+		virtual nlohmann::json ToJsonC() = 0;
 		virtual void InitFromJson(nlohmann::json& _json) = 0;
 
+		
 		
 	};
 

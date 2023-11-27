@@ -21,7 +21,7 @@ Engine::Entity* Engine::World::CreateEntity(json& EntityJson)
 }
 
 void Engine::World::DestroyEntity(Engine::Entity& Entity)
-{
+{ 
 	m_Registry.destroy(Entity.m_EntityHandle);
 	
 }

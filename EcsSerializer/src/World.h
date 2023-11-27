@@ -2,7 +2,7 @@
 #include "entt/entt.hpp"
 #include <vector>
 #include "nlohmann/json.hpp"
-
+#include "ComponentFactory.h"
 
 
 namespace Engine {
@@ -10,6 +10,7 @@ namespace Engine {
 	using json = nlohmann::json;
 
 	class Entity;
+	
 
 	class World
 	{
@@ -17,6 +18,7 @@ namespace Engine {
 		World() {};
 		entt::registry m_Registry{};
 		std::vector<Entity*> m_Entities{};
+		ComponentFactory m_CompFactory{};
 
 		Engine::Entity* CreateEntity();
 		Engine::Entity* CreateEntity(json& EntityJson);
