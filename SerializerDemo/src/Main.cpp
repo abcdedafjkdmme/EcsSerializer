@@ -35,7 +35,7 @@ int main() {
 
 	NewScene.SaveScene("nlohmann_data.json");
 
-	NewScene.LoadScene("nlohmann_data.json");
+	//NewScene.LoadScene("nlohmann_data.json");
 
 	UpdatePosition(NewScene);
 

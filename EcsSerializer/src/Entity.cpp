@@ -5,15 +5,9 @@
 
 namespace Engine {
 
-	Entity::Entity(Engine::World* _Scene, entt::entity _EntityHandle) :m_World(_Scene), m_EntityHandle(_EntityHandle) {
-		std::cout << "created entity without json \n";
-	}
+	Entity::Entity(Engine::World* _Scene, entt::entity _EntityHandle) :m_World(_Scene), m_EntityHandle(_EntityHandle) {}
 
 	Entity::Entity(Engine::World* _Scene, entt::entity _EntityHandle, json& EntityJson) :m_World(_Scene), m_EntityHandle(_EntityHandle) {
-
-		std::cout << "created entity with json \n";
-
-		
 
 		for (json& CompJson : EntityJson.at("components")) {
 

@@ -7,7 +7,7 @@
 
 Engine::ComponentFactory::ComponentFactory()
 {
-	std::cout << "created comp factory \n";
+	
 	RegisterAllComponents();
 }
 
@@ -16,7 +16,7 @@ Engine::ComponentFactory::ComponentFactory()
 void Engine::ComponentFactory::AddComponentFromType(std::string Type, nlohmann::json& CompJson, Engine::Entity& TargetEntity)
 {
 
-	CompMap.at(Type)->CreateAndAddComponent(TargetEntity, CompJson);
+	CompMap.at(Type)->AddComponentToEntity(TargetEntity).InitFromJson(CompJson);
 }
 
 

@@ -13,9 +13,9 @@ namespace Engine {
 		Name() : Component("Name") {};
 		Name(std::string _Name) : Component("Name"), StrName(_Name) {};
 
-		void CreateAndAddComponent(Entity& Target, nlohmann::json& CompJson) override {
+		Component& AddComponentToEntity(Entity& Target) override {
 
-			Target.AddComponent<Name>().InitFromJson(CompJson);
+			return Target.AddComponent<Name>();
 
 		};
 
@@ -44,9 +44,9 @@ namespace Engine {
 		double Y{};
 
 
-		void CreateAndAddComponent(Entity& Target, nlohmann::json& CompJson) override {
+		Component& AddComponentToEntity(Entity& Target) override {
 
-			Target.AddComponent<Position>().InitFromJson(CompJson);
+			return Target.AddComponent<Position>();
 
 		};
 

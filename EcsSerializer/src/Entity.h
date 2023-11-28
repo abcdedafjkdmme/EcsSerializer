@@ -20,7 +20,7 @@ namespace Engine {
 	public:
 		Entity(Engine::World* _Scene, entt::entity _EntityHandle);
 		Entity(Engine::World* _Scene, entt::entity _EntityHandle, json& EntityJson);
-		virtual ~Entity() { std::cout << "destoyed entity \n"; };
+		virtual ~Entity() { };
 		std::vector<Component*> m_Components{};
 
 	private:
