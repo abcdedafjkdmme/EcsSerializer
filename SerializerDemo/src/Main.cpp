@@ -24,18 +24,18 @@ void UpdatePosition(Engine::World& World) {
 int main() {
 
 
-	for (size_t i = 0; i < 4; i++)
+	/*for (size_t i = 0; i < 4; i++)
 	{
 
 		Engine::Entity* EcsEntity = NewScene.CreateEntity();
 		EcsEntity->AddComponent<Engine::Name>("my created entity");
 		EcsEntity->AddComponent<Engine::Position>(2.0,4.0);
 		
-	}
+	}*/
 
-	NewScene.SaveScene("nlohmann_data.json");
+	//NewScene.SaveScene("nlohmann_data.json");
 
-	//NewScene.LoadScene("nlohmann_data.json");
+	NewScene.LoadScene("nlohmann_data.json");
 
 	UpdatePosition(NewScene);
 

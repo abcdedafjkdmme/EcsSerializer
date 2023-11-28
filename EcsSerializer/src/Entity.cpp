@@ -15,6 +15,10 @@ namespace Engine {
 
 		}
 
+	}
+	Entity::~Entity()
+	{
+		m_World->RemoveEntityFromRegistry(*this);
 	};
 
 	void to_json(json& J, const Engine::Entity& E)

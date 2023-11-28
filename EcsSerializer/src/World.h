@@ -23,9 +23,10 @@ namespace Engine {
 		Engine::Entity* CreateEntity();
 		Engine::Entity* CreateEntity(json& EntityJson);
 
-		void DestroyEntity(Engine::Entity& Entity);
+		void RemoveEntityFromRegistry(Engine::Entity& Entity);
 
 		void SaveScene(std::string OutFilePath);
+		void DestroyAllEntities();
 		void LoadScene(std::string InFilePath);
 	};
 	

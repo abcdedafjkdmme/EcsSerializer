@@ -20,7 +20,7 @@ Engine::Entity* Engine::World::CreateEntity(json& EntityJson)
 	return CreatedEntity;
 }
 
-void Engine::World::DestroyEntity(Engine::Entity& Entity)
+void Engine::World::RemoveEntityFromRegistry(Engine::Entity& Entity)
 { 
 	m_Registry.destroy(Entity.m_EntityHandle);
 	
@@ -45,17 +45,21 @@ void Engine::World::SaveScene(std::string OutFilePath)
 	OutFile << std::setw(4) << SceneJson << std::endl;
 }
 
+void Engine::World::DestroyAllEntities()
+{
+	for (auto* Ent : m_Entities)
+	{
+		delete Ent;
+	}
+}
+
 void Engine::World::LoadScene(std::string InFilePath)
 {
 	json InJson;
 	std::ifstream InFile{ InFilePath };
 	InFile >> InJson;
 
-	for (auto* Ent : m_Entities)
-	{
-		DestroyEntity(*Ent);
-		delete Ent;
-	}
+	DestroyAllEntities();
 
 	for (json& EntJson : InJson.at("Entities")) {
 
