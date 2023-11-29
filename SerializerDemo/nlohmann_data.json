@@ -1,6 +1,7 @@
 {
     "Entities": [
         {
+            "UUID": "447987d9-b233-43f8-a455-806d1f7da7e8",
             "components": [
                 {
                     "ComponentType": "EntityMarker"
@@ -17,6 +18,7 @@
             ]
         },
         {
+            "UUID": "177a9b42-9a61-4f36-8f79-2a359cc61e08",
             "components": [
                 {
                     "ComponentType": "EntityMarker"
@@ -33,6 +35,7 @@
             ]
         },
         {
+            "UUID": "6a81aaf3-7a9c-4dca-a35a-4bd77fab22d4",
             "components": [
                 {
                     "ComponentType": "EntityMarker"
@@ -49,6 +52,7 @@
             ]
         },
         {
+            "UUID": "4037b1bb-4dee-4deb-8e85-ddc7929c0c2a",
             "components": [
                 {
                     "ComponentType": "EntityMarker"

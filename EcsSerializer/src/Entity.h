@@ -1,16 +1,13 @@
 #pragma once
 
-#include "nlohmann/json.hpp"
 #include "World.h"
 #include <cassert>
 #include <vector>
-
+#include <crossguid/guid.hpp>
 
 using json = nlohmann::json;
 
 namespace Engine {
-
-	
 
 	class Entity {
 
@@ -21,10 +18,13 @@ namespace Engine {
 		Entity(Engine::World* _Scene, entt::entity _EntityHandle, json& EntityJson);
 		virtual ~Entity();
 		std::vector<Component*> m_Components{};
+		xg::Guid m_UUID;
 
 	private:
 		Engine::World* m_World{};
 		entt::entity m_EntityHandle{ entt::null };
+		
+
 		void AddDefaultComponents();
 		
 		

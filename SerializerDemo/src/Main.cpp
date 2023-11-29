@@ -25,7 +25,7 @@ void UpdatePosition(Engine::World& World) {
 int main() {
 
 
-	for (size_t i = 0; i < 4; i++)
+	/*for (size_t i = 0; i < 4; i++)
 	{
 
 		Engine::Entity* EcsEntity = NewScene.CreateEntity();
@@ -35,12 +35,9 @@ int main() {
 	}
 
 	UpdatePosition(NewScene);
-	NewScene.SaveScene("nlohmann_data.json");
+	NewScene.SaveScene("nlohmann_data.json");*/
+
 	NewScene.LoadScene("nlohmann_data.json");
-	//delete NewScene.m_Entities[0];
-
-	
-
 
 	return 0;
 }

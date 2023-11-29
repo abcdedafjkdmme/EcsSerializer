@@ -3,7 +3,6 @@
 #include <string>
 #include <map>
 #include "Component.h"
-#include "nlohmann/json.hpp"
 #include <memory>
 
 namespace Engine {

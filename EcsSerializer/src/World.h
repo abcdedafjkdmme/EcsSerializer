@@ -1,7 +1,7 @@
 #pragma once
+
 #include "entt/entt.hpp"
-#include <vector>
-#include "nlohmann/json.hpp"
+//#include <vector>
 #include "ComponentFactory.h"
 
 
