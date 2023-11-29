@@ -15,6 +15,7 @@ namespace Engine {
 		virtual ~Component() {};
 
 		std::string ComponentType{ };
+		Entity* Owner = nullptr;
 
 		virtual Component& AddComponentToEntity(Entity& Target) = 0;
 		virtual nlohmann::json ToJsonC() = 0;

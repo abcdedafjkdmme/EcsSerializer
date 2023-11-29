@@ -6,6 +6,25 @@
 
 namespace Engine {
 
+	class EntityMarker : public Component {
+	public:
+		EntityMarker() : Component("EntityMarker") {};
+
+		Component& AddComponentToEntity(Entity& Target) override {
+			return Target.AddComponent<EntityMarker>();
+		};
+
+		nlohmann::json ToJsonC() override {
+			return nlohmann::json{
+				{"ComponentType",ComponentType},
+			};
+		};
+
+		void InitFromJson(nlohmann::json& _json) override { };
+
+	};
+
+
 	class Name : public Component {
 	public:
 		std::string StrName{ "None" };

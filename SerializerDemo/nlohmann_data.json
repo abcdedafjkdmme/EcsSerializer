@@ -3,8 +3,11 @@
         {
             "components": [
                 {
+                    "ComponentType": "EntityMarker"
+                },
+                {
                     "ComponentType": "Name",
-                    "Name": "my created entity"
+                    "Name": "updated name"
                 },
                 {
                     "ComponentType": "Position",
@@ -16,8 +19,11 @@
         {
             "components": [
                 {
+                    "ComponentType": "EntityMarker"
+                },
+                {
                     "ComponentType": "Name",
-                    "Name": "my created entity"
+                    "Name": "updated name"
                 },
                 {
                     "ComponentType": "Position",
@@ -29,8 +35,11 @@
         {
             "components": [
                 {
+                    "ComponentType": "EntityMarker"
+                },
+                {
                     "ComponentType": "Name",
-                    "Name": "my created entity"
+                    "Name": "updated name"
                 },
                 {
                     "ComponentType": "Position",
@@ -42,8 +51,11 @@
         {
             "components": [
                 {
+                    "ComponentType": "EntityMarker"
+                },
+                {
                     "ComponentType": "Name",
-                    "Name": "my created entity"
+                    "Name": "updated name"
                 },
                 {
                     "ComponentType": "Position",

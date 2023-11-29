@@ -15,6 +15,7 @@ void UpdatePosition(Engine::World& World) {
 
 
 	view.each([](Engine::Name& name) {
+		name.StrName = "updated name";
 		std::cout << name.StrName << std::endl;
 		});
 }
@@ -24,20 +25,21 @@ void UpdatePosition(Engine::World& World) {
 int main() {
 
 
-	/*for (size_t i = 0; i < 4; i++)
+	for (size_t i = 0; i < 4; i++)
 	{
 
 		Engine::Entity* EcsEntity = NewScene.CreateEntity();
 		EcsEntity->AddComponent<Engine::Name>("my created entity");
 		EcsEntity->AddComponent<Engine::Position>(2.0,4.0);
 		
-	}*/
-
-	//NewScene.SaveScene("nlohmann_data.json");
-
-	NewScene.LoadScene("nlohmann_data.json");
+	}
 
 	UpdatePosition(NewScene);
+	NewScene.SaveScene("nlohmann_data.json");
+	NewScene.LoadScene("nlohmann_data.json");
+	//delete NewScene.m_Entities[0];
+
+	
 
 
 	return 0;

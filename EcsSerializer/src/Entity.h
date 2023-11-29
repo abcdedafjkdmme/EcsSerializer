@@ -4,8 +4,7 @@
 #include "World.h"
 #include <cassert>
 #include <vector>
-#include "Component.h"
-#include "ComponentFactory.h"
+
 
 using json = nlohmann::json;
 
@@ -26,7 +25,7 @@ namespace Engine {
 	private:
 		Engine::World* m_World{};
 		entt::entity m_EntityHandle{ entt::null };
-		
+		void AddDefaultComponents();
 		
 		
 
@@ -40,12 +39,11 @@ namespace Engine {
 			
 			T& AddedComponent = m_World->m_Registry.emplace<T>(m_EntityHandle, std::forward<Args>(args)...);
 			Component* AddedComponentAsComponent = static_cast<Component*>(&AddedComponent);
+			AddedComponentAsComponent->Owner = this;
 
 			assert(AddedComponentAsComponent && "type of component is not Component");
 	
 			m_Components.push_back(AddedComponentAsComponent);
-	
-
 			return AddedComponent;
 
 			 

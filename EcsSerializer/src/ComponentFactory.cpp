@@ -5,9 +5,18 @@
 #include <string>
 
 
+
+void Engine::ComponentFactory::RegisterAllComponents()
+{
+	RegisterComponent<Name>();
+	RegisterComponent<Position>();
+	RegisterComponent<EntityMarker>();
+
+}
+
+
 Engine::ComponentFactory::ComponentFactory()
 {
-	
 	RegisterAllComponents();
 }
 
@@ -15,14 +24,8 @@ Engine::ComponentFactory::ComponentFactory()
 
 void Engine::ComponentFactory::AddComponentFromType(std::string Type, nlohmann::json& CompJson, Engine::Entity& TargetEntity)
 {
-
 	CompMap.at(Type)->AddComponentToEntity(TargetEntity).InitFromJson(CompJson);
 }
 
 
-void Engine::ComponentFactory::RegisterAllComponents()
-{
-	RegisterComponent<Name>();
-	RegisterComponent<Position>();
 
-}

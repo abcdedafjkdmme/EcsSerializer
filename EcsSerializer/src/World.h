@@ -17,7 +17,7 @@ namespace Engine {
 	public:
 		World() {};
 		entt::registry m_Registry{};
-		std::vector<Entity*> m_Entities{};
+		//std::vector<Entity*> m_Entities{};
 		ComponentFactory m_CompFactory{};
 
 		Engine::Entity* CreateEntity();
