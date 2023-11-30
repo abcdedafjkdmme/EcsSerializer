@@ -74,11 +74,13 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
     <IncludePath>$(SolutionDir)EcsSerializer\dependencies\uuid\include;$(IncludePath)</IncludePath>
+    <PublicIncludeDirectories>$(SolutionDir)EcsSerializer\dependencies\uuid\include;$(SolutionDir)EcsSerializer\dependencies\json-master\include;$(SolutionDir)EcsSerializer\dependencies\entt-master\single_include;%(AdditionalIncludeDirectories)</PublicIncludeDirectories>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <EnableClangTidyCodeAnalysis>true</EnableClangTidyCodeAnalysis>
     <IncludePath>$(SolutionDir)EcsSerializer\dependencies\uuid\include;$(IncludePath)</IncludePath>
+    <PublicIncludeDirectories>$(SolutionDir)EcsSerializer\dependencies\uuid\include;$(SolutionDir)EcsSerializer\dependencies\json-master\include;$(SolutionDir)EcsSerializer\dependencies\entt-master\single_include;%(AdditionalIncludeDirectories)</PublicIncludeDirectories>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

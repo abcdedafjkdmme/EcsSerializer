@@ -1,14 +1,16 @@
 {
     "Entities": [
         {
-            "UUID": "447987d9-b233-43f8-a455-806d1f7da7e8",
+            "ChildrenUUIDs": [],
+            "ParentUUID": "5aeb5f67-20bd-4236-a01f-0be2bb586b12",
+            "UUID": "3e305c4d-4a6d-477b-b0d5-02c6f4a53bbe",
             "components": [
                 {
                     "ComponentType": "EntityMarker"
                 },
                 {
                     "ComponentType": "Name",
-                    "Name": "updated name"
+                    "Name": "my created entity"
                 },
                 {
                     "ComponentType": "Position",
@@ -18,14 +20,16 @@
             ]
         },
         {
-            "UUID": "177a9b42-9a61-4f36-8f79-2a359cc61e08",
+            "ChildrenUUIDs": [],
+            "ParentUUID": "5aeb5f67-20bd-4236-a01f-0be2bb586b12",
+            "UUID": "c6ebd986-b4ef-4415-b339-0aa68ee86204",
             "components": [
                 {
                     "ComponentType": "EntityMarker"
                 },
                 {
                     "ComponentType": "Name",
-                    "Name": "updated name"
+                    "Name": "my created entity"
                 },
                 {
                     "ComponentType": "Position",
@@ -35,14 +39,16 @@
             ]
         },
         {
-            "UUID": "6a81aaf3-7a9c-4dca-a35a-4bd77fab22d4",
+            "ChildrenUUIDs": [],
+            "ParentUUID": "5aeb5f67-20bd-4236-a01f-0be2bb586b12",
+            "UUID": "b8b973a0-e82f-4dd2-8dd2-ae6b99b3aee4",
             "components": [
                 {
                     "ComponentType": "EntityMarker"
                 },
                 {
                     "ComponentType": "Name",
-                    "Name": "updated name"
+                    "Name": "my created entity"
                 },
                 {
                     "ComponentType": "Position",
@@ -52,19 +58,88 @@
             ]
         },
         {
-            "UUID": "4037b1bb-4dee-4deb-8e85-ddc7929c0c2a",
+            "ChildrenUUIDs": [],
+            "ParentUUID": "5aeb5f67-20bd-4236-a01f-0be2bb586b12",
+            "UUID": "b1062e97-a4cf-4e57-840d-c6e4b3470990",
             "components": [
                 {
                     "ComponentType": "EntityMarker"
                 },
                 {
                     "ComponentType": "Name",
-                    "Name": "updated name"
+                    "Name": "my created entity"
                 },
                 {
                     "ComponentType": "Position",
                     "X": 2.0,
                     "Y": 4.0
+                }
+            ]
+        },
+        {
+            "ChildrenUUIDs": [],
+            "ParentUUID": "1fff1cb4-cadf-426a-92ae-345d4b0f9c6f",
+            "UUID": "4b93404c-797c-4452-b723-30fa358e12d2",
+            "components": [
+                {
+                    "ComponentType": "EntityMarker"
+                }
+            ]
+        },
+        {
+            "ChildrenUUIDs": [
+                "4b93404c-797c-4452-b723-30fa358e12d2"
+            ],
+            "ParentUUID": "5aeb5f67-20bd-4236-a01f-0be2bb586b12",
+            "UUID": "1fff1cb4-cadf-426a-92ae-345d4b0f9c6f",
+            "components": [
+                {
+                    "ComponentType": "EntityMarker"
+                },
+                {
+                    "ComponentType": "Name",
+                    "Name": "my created entity"
+                },
+                {
+                    "ComponentType": "Position",
+                    "X": 2.0,
+                    "Y": 4.0
+                }
+            ]
+        },
+        {
+            "ChildrenUUIDs": [],
+            "ParentUUID": "5aeb5f67-20bd-4236-a01f-0be2bb586b12",
+            "UUID": "3449f9e4-44e4-45d2-85f3-845a33e57358",
+            "components": [
+                {
+                    "ComponentType": "EntityMarker"
+                },
+                {
+                    "ComponentType": "Name",
+                    "Name": "my created entity"
+                },
+                {
+                    "ComponentType": "Position",
+                    "X": 2.0,
+                    "Y": 4.0
+                }
+            ]
+        },
+        {
+            "ChildrenUUIDs": [
+                "3449f9e4-44e4-45d2-85f3-845a33e57358",
+                "1fff1cb4-cadf-426a-92ae-345d4b0f9c6f",
+                "b1062e97-a4cf-4e57-840d-c6e4b3470990",
+                "b8b973a0-e82f-4dd2-8dd2-ae6b99b3aee4",
+                "c6ebd986-b4ef-4415-b339-0aa68ee86204",
+                "3e305c4d-4a6d-477b-b0d5-02c6f4a53bbe"
+            ],
+            "ParentUUID": "00000000-0000-0000-0000-000000000000",
+            "UUID": "5aeb5f67-20bd-4236-a01f-0be2bb586b12",
+            "components": [
+                {
+                    "ComponentType": "EntityMarker"
                 }
             ]
         }

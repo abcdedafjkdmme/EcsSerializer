@@ -11,20 +11,34 @@ namespace Engine {
 
 	class Entity {
 
-	friend class World;
+		friend class World;
 
 	public:
 		Entity(Engine::World* _Scene, entt::entity _EntityHandle);
 		Entity(Engine::World* _Scene, entt::entity _EntityHandle, json& EntityJson);
 		virtual ~Entity();
-		std::vector<Component*> m_Components{};
+
 		xg::Guid m_UUID;
+
+		std::vector<Component*> m_Components{};
+
+		Entity* Parent{nullptr};
+		xg::Guid ParentUUID;
+
+		entt::entity m_EntityHandle{ entt::null };
+
+		std::vector<std::unique_ptr<Entity>> Children;
+		std::vector<xg::Guid> ChildrenUUID;
+		void AddChild(std::unique_ptr<Entity>&& Child);
+		void RemoveThisFromParentsChildren();
+		void RemoveThisUUIDFromParentsChildrenUUID();
+		void RemoveFromParent();
+		
 
 	private:
 		Engine::World* m_World{};
-		entt::entity m_EntityHandle{ entt::null };
 		
-
+		int DebugValue = 5;
 		void AddDefaultComponents();
 		
 		
