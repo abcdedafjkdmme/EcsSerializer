@@ -36,24 +36,28 @@ namespace Engine {
 		Parent->Children.erase(
 			std::remove_if(Parent->Children.begin(), Parent->Children.end(),
 				[this](std::unique_ptr<Engine::Entity>& Ent) {
+					std::cout << (Ent.get() == this) << std::endl;
 					return Ent.get() == this;
 				}), Parent->Children.end());
 	};
 
 	void Entity::RemoveThisUUIDFromParentsChildrenUUID()
 	{
+		std::cout << Parent->DebugValue << std::endl;
+
 		Parent->ChildrenUUID.erase(
 			std::remove_if(Parent->ChildrenUUID.begin(), Parent->ChildrenUUID.end(),
 				[this](xg::Guid& UUID) {
 					return UUID == m_UUID;
 				}), Parent->ChildrenUUID.end());
+	
 	};
 
 	void Entity::RemoveFromParent()
 	{
-
-		RemoveThisFromParentsChildren();
-		RemoveThisFromParentsChildren();
+		RemoveThisUUIDFromParentsChildrenUUID();
+		//RemoveThisFromParentsChildren();
+		
 
 		Parent = nullptr;
 		xg::Guid EmtpyGuid;
@@ -65,17 +69,19 @@ namespace Engine {
 
 	void Entity::AddChild(std::unique_ptr<Entity>&& Child)
 	{
-
+		assert(Child != nullptr && "Child is nullptr");
 		assert(Child.get() != this && "cannot add this entity as a child of this entity");
 
-		/*if (Parent != nullptr) {
-			RemoveFromParent();
-		}*/
+		if (Child->Parent != nullptr) {
+			std::cout << "removed" << std::endl;
+			Child->RemoveFromParent();
+		}
 
 
 		Child->Parent = this;
 		Child->ParentUUID = m_UUID;
 		Children.push_back(std::move(Child));
+		//std::cout << Children.back()->m_UUID << std::endl;
 		ChildrenUUID.push_back(Children.back()->m_UUID);
 
 
@@ -98,8 +104,9 @@ namespace Engine {
 	{
 		J = R"(
 				{
-				"UUID":-1,
+				
 				"ParentUUID":-1,
+				"UUID":-1,
 				"ChildrenUUIDs":[],
 				"components":[]
 				})"_json;
@@ -107,7 +114,7 @@ namespace Engine {
 		J.at("UUID") = E.m_UUID.str();
 		J.at("ParentUUID") = E.ParentUUID.str();
 
-		for (auto ChildUUID : E.ChildrenUUID) {
+		for (auto& ChildUUID : E.ChildrenUUID) {
 			J.at("ChildrenUUIDs").push_back(ChildUUID.str());
 		}
 
@@ -118,4 +125,4 @@ namespace Engine {
 
 	}
 
-}
+};
