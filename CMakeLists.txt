@@ -20,17 +20,16 @@ target_sources(${PROJECT_NAME}
                         include/EcsSerializer/Entity.h
                         include/EcsSerializer/World.h )
 
-add_subdirectory(external/entt)
-add_subdirectory(external/guid)
-add_subdirectory(external/nlohmann_json)
+
 
 target_include_directories(
     ${PROJECT_NAME}
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/EcsSerializer>
            $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
-target_link_libraries(${PROJECT_NAME}
-            PUBLIC EnTT::EnTT)
+add_subdirectory(external)
+
+
 
 target_link_libraries(${PROJECT_NAME}
             PUBLIC crossguid)
@@ -39,5 +38,7 @@ set(JSON_BuildTests OFF CACHE INTERNAL "")
 target_link_libraries(${PROJECT_NAME}
            PUBLIC nlohmann_json::nlohmann_json)
 
+target_link_libraries(${PROJECT_NAME}
+           PUBLIC EnTT::EnTT)
 
 add_subdirectory(examples)
