@@ -1,1 +1,7 @@
 
+[submodule "external/entt"]
+	path = external/entt
+	url = https://github.com/skypjack/entt.git
+[submodule "external/guid"]
+	path = external/guid
+	url = https://github.com/graeme-hill/crossguid.git
