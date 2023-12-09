@@ -1,9 +1,0 @@
-[submodule "external/entt"]
-	path = external/entt
-	url = https://github.com/skypjack/entt.git
-[submodule "external/guid"]
-	path = external/guid
-	url = https://github.com/graeme-hill/crossguid.git
-[submodule "external/nlohmann_json"]
-	path = external/nlohmann_json
-	url = https://github.com/nlohmann/json.git

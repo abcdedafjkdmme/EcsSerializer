@@ -1,3 +1,26 @@
-add_subdirectory(entt)
-add_subdirectory(guid)
-add_subdirectory(nlohmann_json)
+include(FetchContent)
+
+
+FetchContent_Declare(
+  entt
+  GIT_REPOSITORY https://github.com/skypjack/entt.git
+)
+FetchContent_MakeAvailable(entt)
+
+
+FetchContent_Declare(
+  nlohmann_json
+  URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz
+)
+FetchContent_MakeAvailable(nlohmann_json)
+
+
+FetchContent_Declare(
+  guid
+  GIT_REPOSITORY https://github.com/graeme-hill/crossguid.git
+)
+FetchContent_MakeAvailable(guid)
+
+
+
+
