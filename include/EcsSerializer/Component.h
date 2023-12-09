@@ -1,7 +1,9 @@
 #pragma once
 
+#include "ReflectedVar.h"
 #include <nlohmann/json.hpp>
 #include <string>
+#include <vector>
 
 namespace Engine {
 
@@ -16,6 +18,7 @@ namespace Engine {
 
 		std::string ComponentType{ };
 		Entity* Owner = nullptr;
+		std::vector<Reflect::Var> ExportedProperties;
 
 		virtual Component& AddComponentToEntity(Entity& Target) = 0;
 		virtual nlohmann::json ToJsonC() = 0;

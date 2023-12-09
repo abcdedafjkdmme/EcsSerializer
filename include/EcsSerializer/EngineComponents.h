@@ -26,16 +26,20 @@ namespace Engine {
 
 
 	class Name : public Component {
+
 	public:
 		std::string StrName{ "None" };
 
-		Name() : Component("Name") {};
-		Name(std::string _Name) : Component("Name"), StrName(_Name) {};
+		Name() : Component("Name") {
+			ExportedProperties.push_back(Reflect::Var{ &StrName, Reflect::Type::StringType, "name" });
+		};
+
+		Name(std::string _Name) : Component("Name"), StrName(_Name) {
+			ExportedProperties.push_back(Reflect::Var{ &StrName, Reflect::Type::StringType, "name" });
+		};
 
 		Component& AddComponentToEntity(Entity& Target) override {
-
 			return Target.AddComponent<Name>();
-
 		};
 
 		nlohmann::json ToJsonC() override {
@@ -47,7 +51,6 @@ namespace Engine {
 
 		void InitFromJson(nlohmann::json& _json) override {
 			StrName = _json.at("Name");
-
 		};
 
 	};
@@ -57,16 +60,22 @@ namespace Engine {
 	class Position : public Engine::Component {
 	public:
 
-		Position(double _X, double _Y) : Component("Position"), X(_X), Y(_Y) {};
-		Position() : Component("Position") {};
+		Position(double _X, double _Y) : Component("Position"), X(_X), Y(_Y) {
+			ExportedProperties.push_back(Reflect::Var{ &X, Reflect::Type::DoubleType, "x" });
+			ExportedProperties.push_back(Reflect::Var{ &Y, Reflect::Type::DoubleType, "y" });
+		};
+
+		Position() : Component("Position") {
+			ExportedProperties.push_back(Reflect::Var{ &X, Reflect::Type::DoubleType, "x" });
+			ExportedProperties.push_back(Reflect::Var{ &Y, Reflect::Type::DoubleType, "y" });
+		};
+
 		double X{};
 		double Y{};
 
 
 		Component& AddComponentToEntity(Entity& Target) override {
-
 			return Target.AddComponent<Position>();
-
 		};
 
 		nlohmann::json ToJsonC() override {

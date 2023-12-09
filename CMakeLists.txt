@@ -18,7 +18,8 @@ target_sources(${PROJECT_NAME}
                         include/EcsSerializer/ComponentFactory.h
                         include/EcsSerializer/EngineComponents.h
                         include/EcsSerializer/Entity.h
-                        include/EcsSerializer/World.h )
+                        include/EcsSerializer/World.h
+                        include/EcsSerializer/ReflectedVar.h )
 
 
 
@@ -27,18 +28,13 @@ target_include_directories(
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/EcsSerializer>
            $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
+
 add_subdirectory(external)
-
-
-
 target_link_libraries(${PROJECT_NAME}
             PUBLIC crossguid)
-
-
 target_link_libraries(${PROJECT_NAME}
            PUBLIC nlohmann_json::nlohmann_json)
-
 target_link_libraries(${PROJECT_NAME}
            PUBLIC EnTT::EnTT)
-
+           
 add_subdirectory(examples)
